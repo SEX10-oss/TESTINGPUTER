@@ -1,0 +1,16 @@
+services:
+  - type: web
+    name: puter-api
+    env: node
+    runtime:
+      version: 14
+    region: oregon
+    plan: free
+    build:
+      - npm install
+      - npm run build
+    ports:
+      - 3000:3000
+    envVars:
+      - key: PORT
+        value: 3000
